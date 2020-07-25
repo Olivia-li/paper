@@ -66,29 +66,14 @@ function isLink(link) {
   }
 }
 
-// Logic to save your data
-function saveData() {
-  var content = $("#content").html();
-  console.log(content);
-  var data = {
-    data: {
-      text: content,
-      theme: $("body").attr("class"),
-    },
-  };
-  chrome.storage.local.set(data, function () {});
-}
-
 // Put back all the saved content
-document.body.onload = function () {
-
+window.onload = function () {
   // Sets up document when it first loads
   chrome.storage.local.get("data", function (items) {
     if (!chrome.runtime.error) {
       // Make sure data is available if not set to default text
       if (items["data"]) {
         $("#content").html(items["data"]["text"]);
-        console.log(items["data"]["text"]);
         // Theme logic
         var theme = items["data"]["theme"];
         if (theme == "light-mode") {
@@ -104,7 +89,7 @@ document.body.onload = function () {
         }
       } else {
         $("#content").html(
-          "CTRL + B to <b>Bold</b><br>CTRL + I to <i>Italicize</i><br>You can add emojis &#128526<br>And everything saves and syncs between tabs!"
+          "CTRL + B to <b>Bold</b><br>CTRL + I to <i>Italicize</i><br>You can add emojis &#128526<br>CTRL + E to <code>write some code</code><br>And everything saves and syncs between tabs!"
         );
         light_mode();
       }
@@ -117,6 +102,17 @@ document.body.onload = function () {
   }, 500);
 };
 
+// Logic to save your data
+function saveData() {
+  var content = $("#content").html();
+  var data = {
+    data: {
+      text: content,
+      theme: $("body").attr("class"),
+    },
+  };
+  chrome.storage.local.set(data, function () {});
+}
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function () {
   $("#content").on("paste", function (e) {
@@ -141,6 +137,25 @@ document.addEventListener("DOMContentLoaded", function () {
     hotdog_mode();
   });
 });
+
+document.addEventListener("keydown", event => {
+  if (event.ctrlKey && event.which == 69 || event.metaKey && event.which == 69) {
+    if (window.getSelection) {
+      var selection = window.getSelection().getRangeAt(0);
+      var selectedText = selection.extractContents();
+      console.log(selection.startContainer.parentElement.outerHTML)
+      if(selection.startContainer.parentElement.outerHTML == "<code></code>"){
+
+      }
+      var code = document.createElement("code");
+      code.appendChild(selectedText);
+      selection.insertNode(code);
+    }
+  } 
+ 
+});
+  // Windows for ctrl 
+
 
 // Edge case where you input something before setInterval saves
 window.onbeforeunload = function (event) {
