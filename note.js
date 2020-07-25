@@ -139,19 +139,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("keydown", event => {
+  // Underline
+  if (event.ctrlKey && event.which == 85 || event.metaKey && event.which == 85) {
+    document.execCommand('underline', false, null);
+  } 
+
+  // Code Snippets
   if (event.ctrlKey && event.which == 69 || event.metaKey && event.which == 69) {
     if (window.getSelection) {
       var selection = window.getSelection().getRangeAt(0);
-      var selectedText = selection.extractContents();
-      console.log(selection.startContainer.parentElement.outerHTML)
-      if(selection.startContainer.parentElement.outerHTML == "<code></code>"){
-
+      if(selection.startContainer.parentElement.className == "code"){
+        document.execCommand('removeformat',false,null);
       }
-      var code = document.createElement("code");
-      code.appendChild(selectedText);
-      selection.insertNode(code);
+      else{
+        document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection()+"</code>");
+      }
     }
-  } 
+  }
+  
  
 });
   // Windows for ctrl 
