@@ -1,0 +1,14 @@
+{
+  "name": "New Tab",
+  "version": "1.0",
+  "description": "Opens notepad as a new tab",
+  "permissions": ["storage"],
+  "chrome_url_overrides": {
+    "newtab": "note.html"
+  },
+  "background": {
+    "scripts": ["note.js"],
+    "persistent": false
+  },
+  "manifest_version": 2
+}
