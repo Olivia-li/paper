@@ -152,7 +152,7 @@ document.addEventListener("keydown", event => {
         document.execCommand('removeformat',false,null);
       }
       else{
-        document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection()+"</code>");
+        document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
       }
     }
   }
