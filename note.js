@@ -151,6 +151,9 @@ document.addEventListener("keydown", event => {
       if(selection.startContainer.parentElement.className == "code"){
         document.execCommand('removeformat',false,null);
       }
+      else if (window.getSelection().toString() == ""){
+        console.log("HIHIHHI")
+      }
       else{
         document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
       }
