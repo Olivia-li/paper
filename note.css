@@ -30,25 +30,29 @@ div:focus {
   margin: 0 auto;
 }
 
-.code {
-  border-radius: 3px;
+.dark-mode .code {
   font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
+  border-radius: 3px;
   padding: 0.2em 0.4em;
   font-size: 85%;
-}
-
-.code.dark-mode {
   color: rgb(232, 145, 45);
   border-color: #57585e;
   background-color: rgba(135, 131, 120, 0.15);
 }
 
-.code.light-mode {
+.light-mode .code {
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
   color: #eb5757;
   background-color: rgba(135, 131, 120, 0.15);
 }
 
-.code.hotdog-mode {
+.hotdog-mode .code {
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
   border-width: 1px;
   border-style: solid;
   font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
@@ -206,15 +210,15 @@ label {
   top: -12px;
 }
 
-.light-mode > .help-tip p:before {
+.light-mode .help-tip p:before {
   border-bottom-color: #35363a;
 }
 
-.dark-mode > .help-tip p:before {
+.dark-mode .help-tip p:before {
   border-bottom-color: white;
 }
 
-.hotdog-mode > .help-tip p:before {
+.hotdog-mode .help-tip p:before {
   border-bottom-color: #fffa00;
 }
 

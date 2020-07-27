@@ -3,21 +3,18 @@ function light_mode() {
   $("body").removeClass("dark-mode hotdog-mode").addClass("light-mode");
   $(".line").css("background-color", "black");
   $("#light-button").attr("checked", "");
-  $(".code").removeClass("dark-mode hotdog-mode light-mode").addClass("light-mode");
 }
 
 function hotdog_mode() {
   $("body").removeClass("dark-mode light-mode").addClass("hotdog-mode");
   $(".line").css("background-color", "yellow");
   $("#hotdog-button").attr("checked", "");
-  $(".code").removeClass("dark-mode hotdog-mode light-mode").addClass("hotdog-mode");
 }
 
 function dark_mode() {
   $("body").removeClass("light-mode hotdog-mode").addClass("dark-mode");
   $(".line").css("background-color", "white");
   $("#dark-button").attr("checked", "");
-  $(".code").removeClass("dark-mode hotdog-mode light-mode").addClass("dark-mode");
 }
 
 // Settings Animation
@@ -159,9 +156,6 @@ document.addEventListener("keydown", event => {
       else{
         console.log($("#content").html())
         document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
-        chrome.storage.local.get("data", function (items) {
-          $(".code").removeClass("dark-mode hotdog-mode light-mode").addClass(items["data"]["theme"]);
-        });
 
       }
     }
