@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Tab</title>
+    <link rel="stylesheet" href="./note.css" />
+    <script src="./jquery.js"></script>
+    <script src="./note.js"></script>
+  </head>
+  <body class="light-mode">
+
+    <!-- Settings menu -->
+    <div class="settings">
+      <!-- Settings icon -->
+      <div class="settings-icon">
+        <div class="line bar1"></div>
+        <div class="line bar2"></div>
+        <div class="line bar3"></div>
+      </div>
+
+      <!-- Colour themes -->
+      <div class="mode-options menu-invisible">
+        <label class="theme">
+          <input type="radio" id="light-button" name="mode" value="light" />
+          Light Mode
+        </label>
+        <label class="theme">
+          <input type="radio" id="dark-button" name="mode" value="light" />
+          Dark Mode
+        </label>
+        <label class="theme">
+          <input type="radio" id="hotdog-button" name="mode" value="light" />
+          Hotdog Mode
+        </label>
+      </div>
+    </div>
+
+    <div class="editable">
+      <div id="content" contenteditable="true"></div>
+    </div>
+
+    <div class="help-tip">
+      <p>CTRL + B : <b>Bold</b><br />CTRL + I : <i>Italicize</i><br>CTRL + U : <u>Underline</u><br>CTRL + E : <code class="code">Codify</code></p>
+    </div>
+  </body>
+</html>
