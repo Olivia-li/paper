@@ -166,10 +166,38 @@ label {
 }
 
 .help-tip:hover p {
+  line-height: 2rem;
   display: block;
   transform-origin: 100% 0%;
   -webkit-animation: fadeIn 0.3s ease-in-out;
   animation: fadeIn 0.3s ease-in-out;
+}
+
+.helptip code {
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
+}
+.hotdog-mode > .help-tip code {
+  border-width: 1px;
+  border-style: solid;
+  color: #ff0000;
+  border-color: #ff0000;
+  background-color: rgba(135, 131, 120, 0.15);
+}
+
+.dark-mode > .help-tip code {
+  color: #eb5757;
+  background-color: rgba(135, 131, 120, 0.15);
+}
+
+.light-mode > .help-tip code {
+  border-width: 1px;
+  border-style: solid;
+  color: rgb(232, 145, 45);
+  border-color: #57585e;
+  background-color: rgba(135, 131, 120, 0.15);
 }
 
 .help-tip p {
@@ -189,6 +217,7 @@ label {
   background-color: #35363a;
   color: white;
 }
+
 
 .dark-mode > .help-tip p {
   background-color: white;

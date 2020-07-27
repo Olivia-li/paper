@@ -152,11 +152,10 @@ document.addEventListener("keydown", event => {
         document.execCommand('removeformat',false,null);
       }
       else if (window.getSelection().toString() == ""){
+        console.log($("#content").html());
       }
       else{
-        console.log($("#content").html())
         document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
-
       }
     }
   }
