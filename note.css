@@ -1,4 +1,3 @@
-
 html,
 body {
   height: 95vh;
@@ -31,16 +30,31 @@ div:focus {
   margin: 0 auto;
 }
 
-code {
+.code {
+  border-radius: 3px;
+  font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+}
+
+.code.dark-mode {
+  color: rgb(232, 145, 45);
+  border-color: #57585e;
+  background-color: rgba(135, 131, 120, 0.15);
+}
+
+.code.light-mode {
+  color: #eb5757;
+  background-color: rgba(135, 131, 120, 0.15);
+}
+
+.code.hotdog-mode {
   border-width: 1px;
   border-style: solid;
-  border-radius: 2px;
-  border-color: #57585e;
-  background-color: #3f4045;
-  padding: 0 5px;
   font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
-  font-size: 14px;
-  color: rgb(232, 145, 45);
+  color: yellow;
+  border-color: yellow;
+  background-color: rgba(135, 131, 120, 0.15);
 }
 
 /* Theme */
