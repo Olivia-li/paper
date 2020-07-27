@@ -25,37 +25,32 @@ div:focus {
   font-weight: 100;
   line-height: 35px;
   padding-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   max-width: 70vw;
   margin: 0 auto;
 }
 
-.dark-mode .code {
+code{
   font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
   border-radius: 3px;
   padding: 0.2em 0.4em;
   font-size: 85%;
+}
+
+.dark-mode code {
   color: rgb(232, 145, 45);
   border-color: #57585e;
   background-color: rgba(135, 131, 120, 0.15);
 }
 
-.light-mode .code {
-  border-radius: 3px;
-  padding: 0.2em 0.4em;
-  font-size: 85%;
-  font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
+.light-mode code {
   color: #eb5757;
   background-color: rgba(135, 131, 120, 0.15);
 }
 
-.hotdog-mode .code {
-  border-radius: 3px;
-  padding: 0.2em 0.4em;
-  font-size: 85%;
+.hotdog-mode code {
   border-width: 1px;
   border-style: solid;
-  font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
   color: yellow;
   border-color: yellow;
   background-color: rgba(135, 131, 120, 0.15);
