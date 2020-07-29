@@ -30,31 +30,31 @@ div:focus {
   margin: 0 auto;
 }
 
-code{
+/* code{
   font-family: "Monaco", "Menlo", "Consolas", "Courier New", "monospace";
   border-radius: 3px;
   padding: 0.2em 0.4em;
   font-size: 85%;
 }
 
-.dark-mode code {
+.dark-mode .code {
   color: rgb(232, 145, 45);
   border-color: #57585e;
   background-color: rgba(135, 131, 120, 0.15);
 }
 
-.light-mode code {
+.light-mode .code {
   color: #eb5757;
   background-color: rgba(135, 131, 120, 0.15);
 }
 
-.hotdog-mode code {
+.hotdog-mode .code {
   border-width: 1px;
   border-style: solid;
   color: yellow;
   border-color: yellow;
   background-color: rgba(135, 131, 120, 0.15);
-}
+} */
 
 /* Theme */
 .dark-mode {

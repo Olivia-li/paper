@@ -89,7 +89,7 @@ window.onload = function () {
         }
       } else {
         $("#content").html(
-          "CTRL + B to <b>Bold</b><br>CTRL + I to <i>Italicize</i><br>You can add emojis &#128526<br>CTRL + E to <code>write some code</code><br>And everything saves and syncs between tabs!"
+          "CTRL + B to <b>Bold</b><br>CTRL + I to <i>Italicize</i><br>CTRL + U to <u>Underline</u><br>You can add emojis &#128526<br>And everything saves and syncs between tabs!"
         );
         light_mode();
       }
@@ -145,20 +145,20 @@ document.addEventListener("keydown", event => {
   } 
 
   // Code Snippets
-  if (event.ctrlKey && event.which == 69 || event.metaKey && event.which == 69) {
-    if (window.getSelection) {
-      var selection = window.getSelection().getRangeAt(0);
-      if(selection.startContainer.parentElement.className.includes("code")){
-        document.execCommand('removeformat',false,null);
-      }
-      else if (window.getSelection().toString() == ""){
-        console.log($("#content").html());
-      }
-      else{
-        document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
-      }
-    }
-  }
+  // if (event.ctrlKey && event.which == 69 || event.metaKey && event.which == 69) {
+  //   if (window.getSelection) {
+  //     var selection = window.getSelection().getRangeAt(0);
+  //     if(selection.startContainer.parentElement.className.includes("code")){
+  //       document.execCommand('removeformat',false,null);
+  //     }
+  //     else if (window.getSelection().toString() == ""){
+  //       console.log($("#content").html());
+  //     }
+  //     else{
+  //       document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
+  //     }
+  //   }
+  // }
   
  
 });
