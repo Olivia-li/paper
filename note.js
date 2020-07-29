@@ -1,3 +1,8 @@
+// chrome.browserAction.onClicked.addListener(function(tab) {
+//   var url = "chrome://newtab"
+//   chrome.tabs.create({ url: url });
+// });
+
 // Theme Stuff
 function light_mode() {
   $("body").removeClass("dark-mode hotdog-mode").addClass("light-mode");
