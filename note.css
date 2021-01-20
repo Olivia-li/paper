@@ -4,20 +4,20 @@ body {
 }
 /* Editable section */
 #editor {
-  height: 90vh;
+  min-height: 90vh;
   padding-top: 3em;
-  width: 55vw;
+  width: 720px;
   margin: 0 auto;
   display: inline-block;
-  vertical-align: top;
   position: absolute;
   left: 25%;
   margin-left: -50px;
 }
 
 #editor > .ql-editor {
-  font-family: Oxygen Ubuntu -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
+  font-family: Oxygen, Ubuntu -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #editor > .ql-editor::before {
@@ -28,21 +28,28 @@ body {
   color: gray;
 }
 
+.hotdog-mode > #editor > .ql-editor {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 .hotdog-mode > #editor > .ql-editor::before {
-  color:  #c4c100 ;
+  color: #c4c100;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 /* Theme */
 .dark-mode {
   background-color: #35363a;
   color: white;
-  font-family: "Helvetica", sans-serif;
+  font-family: Oxygen, Ubuntu -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .light-mode {
   background-color: white;
   color: black;
-  font-family: "Helvetica", sans-serif;
+  font-family: Oxygen, Ubuntu -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .hotdog-mode {
@@ -55,7 +62,6 @@ body {
 label {
   font-weight: 100;
   font-size: 15px;
-  font-family: Oxygen Ubuntu -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding-top: 10px;
   display: block;
 }
