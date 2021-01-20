@@ -24,6 +24,14 @@ body {
   font-style: normal;
 }
 
+.dark-mode > #editor > .ql-editor::before {
+  color: gray;
+}
+
+.hotdog-mode > #editor > .ql-editor::before {
+  color:  #c4c100 ;
+}
+
 /* Theme */
 .dark-mode {
   background-color: #35363a;

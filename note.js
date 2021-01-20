@@ -68,10 +68,7 @@ function isLink(link) {
 
 // Quilljs stuff 
 var toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-  [{ 'header': 1 }],               // custom button values
-  [{ 'list': 'bullet' }, { 'list': 'checked' }],
-  ['image']                                         // remove formatting button
+  ['bold', 'italic', 'underline', 'strike', { 'header': 1 }, { 'list': 'bullet' }, 'image'],        // toggled buttons
 ];
 
 var options = {
@@ -90,7 +87,7 @@ window.onload = function () {
     if (!chrome.runtime.error) {
       // Make sure data is available if not set to default text
       if (items["data"]) {
-        $("#content").html(items["data"]["text"]);
+        quill.setContents(items["data"]["text"]);
         // Theme logic
         var theme = items["data"]["theme"];
         if (theme == "light-mode") {
@@ -115,13 +112,14 @@ window.onload = function () {
 
   // Save text every 500 milliseconds
   setInterval(function () {
-    saveData();
+    saveData(quill);
   }, 500);
 };
 
 // Logic to save your data
-function saveData() {
-  var content = $("#content").html();
+function saveData(quillref) {
+  console.log(quillref.getContents())
+  var content = quillref.getContents();
   var data = {
     data: {
       text: content,
