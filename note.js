@@ -73,6 +73,9 @@ function isLink(link) {
 
 // Put back all the saved content
 window.onload = function () {
+  var quill = new Quill('#editor', {
+    theme: 'bubble'
+  });
   // Sets up document when it first loads
   chrome.storage.local.get("data", function (items) {
     if (!chrome.runtime.error) {
