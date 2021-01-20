@@ -1,12 +1,12 @@
 html,
 body {
-  height: 95vh;
+  min-height: 95vh;
 }
 /* Editable section */
 #editor {
-  min-height: 90vh;
   padding-top: 3em;
-  width: 720px;
+  min-width: 720px;
+  width: 55vw;
   margin: 0 auto;
   display: inline-block;
   position: absolute;
