@@ -1,19 +1,17 @@
+var quill = ""
 // Theme Stuff
 function light_mode() {
-  $("body").removeClass("dark-mode hotdog-mode").addClass("light-mode");
-  $(".line").css("background-color", "black");
+  $("body").attr("class", "light-mode")
   $("#light-button").attr("checked", "");
 }
 
 function hotdog_mode() {
-  $("body").removeClass("dark-mode light-mode").addClass("hotdog-mode");
-  $(".line").css("background-color", "yellow");
+  $("body").attr("class", "hotdog-mode")
   $("#hotdog-button").attr("checked", "");
 }
 
 function dark_mode() {
-  $("body").removeClass("light-mode hotdog-mode").addClass("dark-mode");
-  $(".line").css("background-color", "white");
+  $("body").attr("class", "dark-mode")
   $("#dark-button").attr("checked", "");
 }
 
@@ -45,27 +43,6 @@ var vis = (function () {
   };
 })();
 
-// Syncs tabs when you have multiple new tabs open
-chrome.storage.onChanged.addListener(function (changes, namespace) {
-  for (var key in changes) {
-    var storageChange = changes[key];
-    if (!vis()) {
-      $("#content").html(storageChange.newValue["text"]);
-    }
-  }
-});
-
-// Auto hyperlink links this hasn't been implemented yet
-function isLink(link) {
-  var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-  var regex = new RegExp(expression);
-  if (link.match(regex)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 // Quilljs stuff 
 var toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike', { 'header': 1 }, { 'list': 'bullet' }, 'image'],        // toggled buttons
@@ -81,15 +58,29 @@ var options = {
 
 // Put back all the saved content
 window.onload = function () {
-  var quill = new Quill('#editor', options);
   // Sets up document when it first loads
-  chrome.storage.local.get("data", function (items) {
+  quill = new Quill('#editor', options);
+  setData();
+
+  // Save text every 500 milliseconds and allows for multiple tabs to be synced up
+  setInterval(function () {
+    if (!vis()) {
+      console.log("not")
+      setData();
+    }
+    else {
+      saveData();
+    }
+  }, 500);
+};
+
+function setData() {
+  chrome.storage.sync.get(['data'], function (result) {
     if (!chrome.runtime.error) {
-      // Make sure data is available if not set to default text
-      if (items["data"]) {
-        quill.setContents(items["data"]["text"]);
+      if (result.data) {
+        quill.setContents(result.data.content);
         // Theme logic
-        var theme = items["data"]["theme"];
+        var theme = result.data.theme;
         if (theme == "light-mode") {
           light_mode();
         } else if (theme == "dark-mode") {
@@ -97,44 +88,26 @@ window.onload = function () {
         } else if (theme == "hotdog-mode") {
           hotdog_mode();
         }
-        // Shouldn't ever run but just in case
         else {
           light_mode();
         }
-      } else {
-        $("#content").html(
-          "CTRL + B to <b>Bold</b><br>CTRL + I to <i>Italicize</i><br>CTRL + U to <u>Underline</u><br>You can add emojis &#128526<br>And everything saves and syncs between tabs!"
-        );
-        light_mode();
       }
     }
   });
-
-  // Save text every 500 milliseconds
-  setInterval(function () {
-    saveData(quill);
-  }, 500);
-};
+}
 
 // Logic to save your data
-function saveData(quillref) {
-  console.log(quillref.getContents())
-  var content = quillref.getContents();
+function saveData() {
+  var content = quill.getContents();
+  var theme = $("body").attr("class");
   var data = {
-    data: {
-      text: content,
-      theme: $("body").attr("class"),
-    },
-  };
-  chrome.storage.local.set(data, function () { });
+    theme: theme,
+    content: content
+  }
+  chrome.storage.sync.set({ data: data }, function () { });
 }
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function () {
-  $("#content").on("paste", function (e) {
-    e.preventDefault();
-    var text = e.originalEvent.clipboardData.getData("text");
-    document.execCommand("insertText", false, text);
-  });
 
   $(".settings-icon").click(function () {
     toggleMenu();
