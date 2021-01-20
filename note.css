@@ -16,7 +16,7 @@ body {
 
 #editor > .ql-editor {
   font-size: 1rem;
-  font-family: Oxygen, Ubuntu -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: Ubuntu, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -41,14 +41,14 @@ body {
 .dark-mode {
   background-color: #35363a;
   color: white;
-  font-family: Oxygen, Ubuntu -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: Ubuntu, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .light-mode {
   background-color: white;
   color: black;
-  font-family: Oxygen, Ubuntu -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: Ubuntu, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
