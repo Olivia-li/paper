@@ -5,7 +5,4 @@
 `CTRL + U` | <ins>Underline</ins>  
 
 ## Coming Soon
-- hyperlink autorecognition
-- bullet points
-- check marks
-- inline code formatting
+Checkmarks
