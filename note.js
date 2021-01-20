@@ -1,8 +1,3 @@
-// chrome.browserAction.onClicked.addListener(function(tab) {
-//   var url = "chrome://newtab"
-//   chrome.tabs.create({ url: url });
-// });
-
 // Theme Stuff
 function light_mode() {
   $("body").removeClass("dark-mode hotdog-mode").addClass("light-mode");
@@ -71,11 +66,25 @@ function isLink(link) {
   }
 }
 
+// Quilljs stuff 
+var toolbarOptions = [
+  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+  [{ 'header': 1 }],               // custom button values
+  [{ 'list': 'bullet' }, { 'list': 'checked' }],
+  ['image']                                         // remove formatting button
+];
+
+var options = {
+  modules: {
+    toolbar: toolbarOptions
+  },
+  placeholder: 'Start writing...',
+  theme: 'bubble'
+};
+
 // Put back all the saved content
 window.onload = function () {
-  var quill = new Quill('#editor', {
-    theme: 'bubble'
-  });
+  var quill = new Quill('#editor', options);
   // Sets up document when it first loads
   chrome.storage.local.get("data", function (items) {
     if (!chrome.runtime.error) {
@@ -119,7 +128,7 @@ function saveData() {
       theme: $("body").attr("class"),
     },
   };
-  chrome.storage.local.set(data, function () {});
+  chrome.storage.local.set(data, function () { });
 }
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function () {
@@ -145,33 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hotdog_mode();
   });
 });
-
-document.addEventListener("keydown", event => {
-  // Underline
-  if (event.ctrlKey && event.which == 85 || event.metaKey && event.which == 85) {
-    document.execCommand('underline', false, null);
-  } 
-
-  // Code Snippets
-  // if (event.ctrlKey && event.which == 69 || event.metaKey && event.which == 69) {
-  //   if (window.getSelection) {
-  //     var selection = window.getSelection().getRangeAt(0);
-  //     if(selection.startContainer.parentElement.className.includes("code")){
-  //       document.execCommand('removeformat',false,null);
-  //     }
-  //     else if (window.getSelection().toString() == ""){
-  //       console.log($("#content").html());
-  //     }
-  //     else{
-  //       document.execCommand("insertHTML", false, "<code class='code'>"+ document.getSelection() + "</code>");
-  //     }
-  //   }
-  // }
-  
- 
-});
-  // Windows for ctrl 
-
 
 // Edge case where you input something before setInterval saves
 window.onbeforeunload = function (event) {
