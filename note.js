@@ -45,7 +45,7 @@ var vis = (function () {
 
 // Quilljs stuff 
 var toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike', { 'header': 1 }, { 'list': 'bullet' }, 'image'],        // toggled buttons
+  ['bold', 'italic', 'underline', 'strike', { 'header': 1 }, { 'list': 'bullet' }],        // toggled buttons
 ];
 
 var options = {
