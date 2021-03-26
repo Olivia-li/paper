@@ -86,15 +86,15 @@ label {
   transition: 0.4s;
 }
 
-.light-mode>.settings>.settings-icon>.line {
+.light-mode > .settings > .settings-icon > .line {
   background-color: black;
 }
 
-.dark-mode>.settings>.settings-icon>.line {
+.dark-mode > .settings > .settings-icon > .line {
   background-color: white;
 }
 
-.hotdog-mode>.settings>.settings-icon>.line {
+.hotdog-mode > .settings > .settings-icon > .line {
   background-color: yellow;
 }
 

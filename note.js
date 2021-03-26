@@ -75,7 +75,7 @@ window.onload = function () {
 };
 
 function setData() {
-  chrome.storage.sync.get(['data'], function (result) {
+  chrome.storage.local.get(['data'], function (result) {
     if (!chrome.runtime.error) {
       if (result.data) {
         quill.setContents(result.data.content);
@@ -104,7 +104,7 @@ function saveData() {
     theme: theme,
     content: content
   }
-  chrome.storage.sync.set({ data: data }, function () { });
+  chrome.storage.local.set({ data: data }, function () { });
 }
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function () {
