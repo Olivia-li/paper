@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "Paper: New tab notebook",
+  "version": "2.2",
+
+  "description": "Clean, simple interface to write notes",
+
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  
+  "chrome_url_overrides": {
+    "newtab": "note.html"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["background.js"]
+    }
+  ]
+
+}
