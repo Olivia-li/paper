@@ -13,5 +13,6 @@
 ## Extension / Addon Links
 **Chrome**: https://chrome.google.com/webstore/detail/paper-new-tab-notebook/onpkjdjjllkdepfhcaklijcfegdjehkm
 <br>
+<br>
 **Firefox**: https://addons.mozilla.org/en-US/firefox/addon/paper-new-tab-notebook/
 
