@@ -16,8 +16,17 @@
     "newtab": "note.html"
   },
 
+  "permissions": ["storage"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "paper-firefox-addon@test.com"
+    }
+  },
+
   "content_scripts": [
     {
+      "matches": ["<all_urls>"],
       "js": ["background.js"]
     }
   ]

@@ -1,0 +1,113 @@
+html,
+body {
+  min-height: 95vh;
+}
+/* Editable section */
+#editor {
+  padding-top: 3em;
+  min-width: 720px;
+  width: 55vw;
+  margin: 0 auto;
+  display: inline-block;
+  position: absolute;
+  left: 25%;
+  margin-left: -50px;
+}
+
+#editor > .ql-editor {
+  font-size: 1rem;
+  font-family: Ubuntu, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#editor > .ql-editor::before {
+  font-style: normal;
+}
+
+.dark-mode > #editor > .ql-editor::before {
+  color: gray;
+}
+
+.hotdog-mode > #editor > .ql-editor {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.hotdog-mode > #editor > .ql-editor::before {
+  color: #c4c100;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Theme */
+.dark-mode {
+  background-color: #35363a;
+  color: white;
+  font-family: Ubuntu, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+  font-family: Ubuntu, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.hotdog-mode {
+  background-color: #ff0000;
+  color: #fffa00;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Settings */
+label {
+  font-weight: 100;
+  font-size: 15px;
+  padding-top: 10px;
+  display: block;
+}
+
+.menu-invisible {
+  padding-top: 5px;
+  display: none;
+}
+
+/* Animating the hamburger settings icon */
+.settings {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.light-mode > .settings > .settings-icon > .line {
+  background-color: black;
+}
+
+.dark-mode > .settings > .settings-icon > .line {
+  background-color: white;
+}
+
+.hotdog-mode > .settings > .settings-icon > .line {
+  background-color: yellow;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 5.5px);
+  transform: rotate(-45deg) translate(-6px, 5.5px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-5.5px, -6px);
+  transform: rotate(45deg) translate(-5.5px, -6px);
+}
