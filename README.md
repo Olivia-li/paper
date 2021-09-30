@@ -1,8 +1,12 @@
 # Paper: New Tab Notebook
 ## Current Functionality
-`CTRL + B` | **Bold**  
-`CTRL + I` | *Italicize*  
-`CTRL + U` | <ins>Underline</ins>  
+**Bold** | `CTRL + B`
+<br>
+<br>
+*Italicize* | `CTRL + I` 
+<br>
+<br>
+<ins>Underline</ins> | `CTRL + U` 
+- [x] Checkboxes | `[ ] + space`
+* Bullet points | `- + space`
 
-## Coming Soon
-Checkmarks
