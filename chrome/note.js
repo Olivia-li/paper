@@ -10,6 +10,11 @@ function hotdog_mode() {
   $("#hotdog-button").attr("checked", "");
 }
 
+function darkdog_mode() {
+  $("body").attr("class", "darkdog-mode");
+  $("#darkdog-button").attr("checked", "");
+}
+
 function dark_mode() {
   $("body").attr("class", "dark-mode")
   $("#dark-button").attr("checked", "");
@@ -87,8 +92,9 @@ function setData() {
           dark_mode();
         } else if (theme == "hotdog-mode") {
           hotdog_mode();
-        }
-        else {
+        } else if (theme == "darkdog-mode") {
+          darkdog_mode();
+        } else {
           light_mode();
         }
       }
@@ -123,6 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $("#hotdog-button").click(function () {
     hotdog_mode();
+  });
+
+  $("#darkdog-button").click(function () {
+    darkdog_mode();
   });
 });
 

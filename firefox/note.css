@@ -28,11 +28,13 @@ body {
   color: gray;
 }
 
-.hotdog-mode > #editor > .ql-editor {
+.hotdog-mode>#editor>.ql-editor,
+.darkdog-mode>#editor>.ql-editor {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.hotdog-mode > #editor > .ql-editor::before {
+.hotdog-mode>#editor>.ql-editor::before,
+.darkdog-mode>#editor>.ql-editor::before {
   color: #c4c100;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -54,6 +56,12 @@ body {
 
 .hotdog-mode {
   background-color: #ff0000;
+  color: #fffa00;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.darkdog-mode {
+  background-color: #5b0000;
   color: #fffa00;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -94,7 +102,8 @@ label {
   background-color: white;
 }
 
-.hotdog-mode > .settings > .settings-icon > .line {
+.hotdog-mode>.settings>.settings-icon>.line,
+.darkdog-mode>.settings>.settings-icon>.line {
   background-color: yellow;
 }
 
