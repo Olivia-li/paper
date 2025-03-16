@@ -6,10 +6,11 @@
   "chrome_url_overrides": {
     "newtab": "note.html"
   },
-  "background":{
-    "scripts": ["background.js"]
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
   },
-  "browser_action": {
+  "action": {
     "default_icon": "icon128.png"
   },
   "icons": {
@@ -17,5 +18,5 @@
     "48": "icon48.png",
     "16": "icon16.png"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
