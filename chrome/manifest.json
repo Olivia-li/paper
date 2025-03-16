@@ -1,6 +1,6 @@
 {
   "name": "Paper: New tab notebook",
-  "version": "2.2",
+  "version": "3.0",
   "description": "Clean, simple interface to write notes",
   "permissions": ["storage"],
   "chrome_url_overrides": {
